@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Aurora from '../components/reactbits/Aurora';
 import GlassSurface from '../components/reactbits/GlassSurface';
-import Dock from '../components/reactbits/Dock';
+import GooeyNav from '../components/reactbits/GooeyNav';
 
 export default function MenuPage() {
   const dockItems = [
@@ -116,12 +116,13 @@ export default function MenuPage() {
         </div>
       </div>
 
-      {/* Dock Navigation */}
-      <Dock
-        items={dockItems}
-        panelHeight={68}
-        baseItemSize={50}
-        magnification={70}
+      {/* GooeyNav Navigation */}
+      <GooeyNav
+        items={dockItems.map(item => ({
+          label: `${item.icon} ${item.label}`,
+          to: item.to
+        }))}
+        initialActiveIndex={2}
       />
     </div>
   );

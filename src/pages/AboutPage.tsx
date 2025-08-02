@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Aurora from '../components/reactbits/Aurora';
 import GlassSurface from '../components/reactbits/GlassSurface';
-import Dock from '../components/reactbits/Dock';
+import GooeyNav from '../components/reactbits/GooeyNav';
 import ShinyText from '../components/reactbits/ShinyText';
 import TestimonialsCarousel from '../components/reactbits/TestimonialsCarousel';
 import AnimatedCounter from '../components/reactbits/AnimatedCounter';
@@ -191,12 +191,13 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Dock Navigation */}
-      <Dock
-        items={dockItems}
-        panelHeight={68}
-        baseItemSize={50}
-        magnification={70}
+      {/* GooeyNav Navigation */}
+      <GooeyNav
+        items={dockItems.map(item => ({
+          label: `${item.icon} ${item.label}`,
+          to: item.to
+        }))}
+        initialActiveIndex={3}
       />
     </div>
   );

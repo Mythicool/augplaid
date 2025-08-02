@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import Aurora from '../components/reactbits/Aurora';
-import ShinyText from '../components/reactbits/ShinyText';
+import TextTrail from '../components/reactbits/TextTrail';
 import BounceCards from '../components/reactbits/BounceCards';
-import Dock from '../components/reactbits/Dock';
+import GooeyNav from '../components/reactbits/GooeyNav';
 import GlassSurface from '../components/reactbits/GlassSurface';
 import TestimonialsCarousel from '../components/reactbits/TestimonialsCarousel';
 import AnimatedCounter from '../components/reactbits/AnimatedCounter';
@@ -83,13 +83,22 @@ export default function HomePage() {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-8xl md:text-9xl font-bold mb-6">
-            <ShinyText 
-              text="Plaid Cat Cafe" 
-              speed={4}
-              className="text-white"
+          <div className="h-32 mb-6">
+            <TextTrail
+              text="Plaid Cat Cafe"
+              fontFamily="Figtree"
+              fontWeight="900"
+              animateColor={true}
+              startColor="#fde047"
+              textColor="#fde047"
+              backgroundColor={0x271e37}
+              noiseFactor={2}
+              rgbPersistFactor={0.96}
+              alphaPersistFactor={0.93}
+              colorCycleInterval={4000}
+              supersample={2}
             />
-          </h1>
+          </div>
           <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed">
             Where purrs meet plaid patterns. Experience the coziest cat cafe in town, 
             featuring adorable rescue cats and artisanal coffee in a warm, plaid-themed atmosphere.
@@ -277,12 +286,13 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Dock Navigation */}
-      <Dock
-        items={DOCK_ITEMS}
-        panelHeight={68}
-        baseItemSize={50}
-        magnification={70}
+      {/* GooeyNav Navigation */}
+      <GooeyNav
+        items={DOCK_ITEMS.map(item => ({
+          label: `${item.icon} ${item.label}`,
+          to: item.to
+        }))}
+        initialActiveIndex={0}
       />
     </div>
   );

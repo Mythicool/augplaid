@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CircularGallery from '../components/reactbits/CircularGallery';
 import Aurora from '../components/reactbits/Aurora';
-import Dock from '../components/reactbits/Dock';
+import GooeyNav from '../components/reactbits/GooeyNav';
 import GlassSurface from '../components/reactbits/GlassSurface';
 import TiltedCard from '../components/reactbits/TiltedCard';
 import LazyImage from '../components/LazyImage';
@@ -301,12 +301,13 @@ export default function CatsPage() {
         </div>
       )}
 
-      {/* Dock Navigation */}
-      <Dock
-        items={DOCK_ITEMS}
-        panelHeight={68}
-        baseItemSize={50}
-        magnification={70}
+      {/* GooeyNav Navigation */}
+      <GooeyNav
+        items={DOCK_ITEMS.map(item => ({
+          label: `${item.icon} ${item.label}`,
+          to: item.to
+        }))}
+        initialActiveIndex={1}
       />
     </div>
   );
