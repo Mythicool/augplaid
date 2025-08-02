@@ -1,0 +1,7 @@
+.animated-counter {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #fde047;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+}

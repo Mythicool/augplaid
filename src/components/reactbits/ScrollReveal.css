@@ -1,0 +1,50 @@
+.scroll-reveal-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-reveal-content {
+  position: relative;
+}
+
+.scroll-reveal-word {
+  display: inline-block;
+  opacity: 0.1;
+  will-change: opacity, filter, transform;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Animation states */
+.scroll-reveal-container.animate-in .scroll-reveal-word {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+/* Performance optimizations */
+.scroll-reveal-container * {
+  will-change: auto;
+}
+
+.scroll-reveal-container.animating * {
+  will-change: opacity, filter, transform;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-reveal-container {
+    /* Reduce motion for mobile devices */
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal-word {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+  
+  .scroll-reveal-container {
+    transform: none !important;
+  }
+}

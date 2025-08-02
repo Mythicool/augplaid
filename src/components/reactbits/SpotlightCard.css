@@ -1,0 +1,175 @@
+.spotlight-card {
+  position: relative;
+  border: 1px solid;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.spotlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.spotlight-card:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.5);
+}
+
+.spotlight-card__spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.spotlight-card__content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* Featured content styling */
+.spotlight-card .featured-cat {
+  text-align: center;
+}
+
+.spotlight-card .featured-cat__image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.5rem;
+  border: 3px solid rgba(251, 191, 36, 0.5);
+  transition: all 0.3s ease;
+}
+
+.spotlight-card:hover .featured-cat__image {
+  border-color: rgba(251, 191, 36, 0.8);
+  transform: scale(1.05);
+}
+
+.spotlight-card .featured-cat__name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(251, 191, 36);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+}
+
+.spotlight-card .featured-cat__title {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.spotlight-card .featured-cat__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.spotlight-card .featured-cat__details {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.spotlight-card .featured-cat__detail {
+  text-align: center;
+}
+
+.spotlight-card .featured-cat__detail-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.spotlight-card .featured-cat__detail-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+}
+
+.spotlight-card .featured-cat__personality {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.spotlight-card .featured-cat__trait {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.spotlight-card:hover .featured-cat__trait {
+  background: rgba(251, 191, 36, 0.2);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+.spotlight-card .featured-cat__cta {
+  background: linear-gradient(135deg, rgb(251, 191, 36), rgb(245, 158, 11));
+  color: black;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.spotlight-card .featured-cat__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .spotlight-card {
+    padding: 1.5rem;
+  }
+  
+  .spotlight-card .featured-cat__image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .spotlight-card .featured-cat__name {
+    font-size: 1.75rem;
+  }
+  
+  .spotlight-card .featured-cat__title {
+    font-size: 1.125rem;
+  }
+  
+  .spotlight-card .featured-cat__details {
+    gap: 1rem;
+  }
+  
+  .spotlight-card .featured-cat__cta {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
